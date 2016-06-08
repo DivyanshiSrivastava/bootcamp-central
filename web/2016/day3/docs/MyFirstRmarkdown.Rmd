@@ -5,29 +5,18 @@ output: html_document
 date: June 8, 2016
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r Normal}
+x = rnorm(1000)
+x = rnorm(1000,mean = 2, sd = 3)
+#Note that the command takes sd and not var, which is usually used to descibe a normal distb. So lets label this
+x = rnorm(1000,mean = 2, sd = 3)
+hist(x, main = "N(2,9)", nclass = 50)
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
-```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 
 ```{}
