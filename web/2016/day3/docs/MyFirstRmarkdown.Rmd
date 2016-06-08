@@ -36,6 +36,26 @@ hist(cors)
 Note: Its nice to have the number of samples and number of genes, as variables on top so that if they change, you dont mess up the code. 
 
 
+So.
+
+```{r}
+nsamples = 20
+ngenes = 1000
+```
+
+Get the 10 most correlated genes:
+
+```{r}
+top = head(sort(abs(as.vector(cors)), decreasing = TRUE))
+```
+
+#The way correlation is computed, we do not need to force the simulated data to have a certain mean, as the mean is subtracted from all arguments. The SD, again does not need to be set.
+
+#For other analyses. Such as clustering, or ANOVA. Then you'd need an estimate of the means/variances. 
+
+#RNA-Seq data are not even close to being normal, so corelation doesnt make much sense.
+
+#We need to force the rnorm generator to be the same each time if you're redoing the simuation. So like use the same seed. 
 
 
 
