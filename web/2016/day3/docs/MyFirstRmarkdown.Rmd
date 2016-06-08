@@ -13,7 +13,27 @@ x = rnorm(1000,mean = 2, sd = 3)
 hist(x, main = "N(2,9)", nclass = 50)
 ```
 
+Exercise 1: 
 
+Generate the phenotypic scores as 20 random normals. Call this vector pheno.
+
+Generate the gene expression scores as a matrix with 1000 rows (genes) and 20 columns (samples). Call this matrix genes.
+
+Compute the 1000 correlations between the phenotypic scores and the gene expression scores. Note that you will need to transpose the gene expression matrix to do this. Call the correlations cors.
+
+```{r}
+#creating a pheno score vector
+pheno=rnorm(20)
+#matrix of 1000 rows and 20 columns) So like 1000 gene exp values for the 20 samples.
+genes=matrix(rnorm(1000*20), nrow = 1000, ncol = 20 )
+#Computing cor
+cors = cor(pheno, t(genes))
+#plotting cors
+hist(cors)
+```
+
+
+Note: Its nice to have the number of samples and number of genes, as variables on top so that if they change, you dont mess up the code. 
 
 
 
